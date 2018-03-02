@@ -30,5 +30,4 @@ form.onsubmit=function () {
     }else{
         alert(textComment.value);
     }
-    dataSent
 }

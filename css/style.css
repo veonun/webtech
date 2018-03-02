@@ -4,6 +4,7 @@
     font-style: revert;
     text-align: center;
     text-transform: uppercase;
+    font-size: 2em;
 }
 #container{
     position: relative;
@@ -24,7 +25,7 @@ div.apply{
 }
 
 .details{
-    padding: 0% 2% 0% 2%;
+    padding: 0% 2% 0% 0%;
     background: lightgray;
 }
 
@@ -35,10 +36,10 @@ div.apply{
 #blog{
     position: relative;
 }
-img {
+img{
     width: 85%;
     height: 70%;
-    border : black solid 40px;
+    border : black solid 2em;
 }
 
 ul li{

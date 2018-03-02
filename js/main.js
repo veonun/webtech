@@ -15,15 +15,20 @@ for (var i = 0; i < k.length; i++) {
 
 /*Check for empty form fields and alert if empty*/
 var form = document.querySelector('form.contact-form');
-
 form.onsubmit=function () {
-    var field = document.getElementsByTagName("input")
+    var field = document.getElementsByTagName("input");
     for (var i = 0; i < field.length; i++) {
         if (field[i].value == "") {
-            alert('empty' + ' ' + field[i].getAttribute("id") + ' ' + 'field');
+            alert('empty' + ' ' + field[i].getAttribute("name") + ' ' + 'field');
         } else {
-
+            alert(field[i].getAttribute("name")+":"+field[i].value);
         }
     }
+    var textComment = document.querySelector('form textarea[name=message]');
+    if (textComment.value == "") {
+        alert('empty' + ' ' + textComment.getAttribute("name") + ' ' + 'field');
+    }else{
+        alert(textComment.value);
+    }
+    dataSent
 }
-

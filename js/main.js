@@ -1,6 +1,6 @@
 /*Hover effect on navbar make background white and test black*/
 var k = document.querySelectorAll("ul.nav.navbar-nav li a");
-for (var i = 0; i < k.length; i++) {
+for (var i = 0; i < k. length; i++) {
     var listitem = k[i];
     listitem.onmouseover = function () {
         this.style["background-color"] = "white";
@@ -11,27 +11,29 @@ for (var i = 0; i < k.length; i++) {
         this.style["background-color"] = '#383E4C';
     };
 }
-
 /*Display all information when click send*/
+
 /*Check for empty form fields and alert if empty*/
 var form = document.querySelector('form.contact-form');
 form.onsubmit=function () {
     var field = document.getElementsByTagName("input");
     var result = new Array();
+    var missing = new Array();
     for (var i = 0; i < field.length; i++) {
         if (field[i].value == "") {
-            alert('Please fill in the empty' + ' ' + field[i].getAttribute("name") + ' ' + 'field');
+            missing.push('Please fill in the empty' + ' ' + field[i].getAttribute("name") + ' ' + 'field');
         } else {
-            result.push(field[i].getAttribute("name")+":"+field[i].value);
+            result.push(field[i].getAttribute("name")+":"+ field[i].value);
         }
     }
 
     var textComment = document.querySelector('form textarea[name=message]');
     if (textComment.value == "") {
-        alert('Please fill empty' + ' ' + textComment.getAttribute("name") + ' ' + 'field');
+        missing.push('Please fill empty' + ' ' + textComment.getAttribute("name") + ' ' + 'field');
     }else{
         result.push(textComment.getAttribute("name")+':'+textComment.value);
     }
+    alert(missing.join('\n'));
     alert(result.join('\n'));
 }
 
@@ -47,6 +49,6 @@ var buttonGreen = document.getElementsByClassName("feature-content-link green-bt
 * <li><a href="http://www.facebook.com/templatemo" class="external" target="_blank">External</a></li>*/
 var fb =document.getElementsByClassName("external")[0];
    fb.onclick = function(){
-   fb.href="https://www.facebook.com/pg/worldrugby7s";
+       fb.href="https://www.facebook.com/pg/worldrugby7s";
 }
 

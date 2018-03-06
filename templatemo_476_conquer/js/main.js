@@ -24,18 +24,22 @@ form.onsubmit=function () {
         if (field[i].value == "") {
             missing.push('Please fill in the empty' + ' ' + field[i].getAttribute("name") + ' ' + 'field');
         } else {
-            result.push(field[i].getAttribute("name")+":"+ field[i].value);
+            result.push(field[i].getAttribute("name") + ":" + field[i].value);
         }
     }
-
     var textComment = document.querySelector('form textarea[name=message]');
     if (textComment.value == "") {
         missing.push('Please fill empty' + ' ' + textComment.getAttribute("name") + ' ' + 'field');
-    }else{
-        result.push(textComment.getAttribute("name")+':'+textComment.value);
+    } else  {
+        result.push(textComment.getAttribute("name") + ':' + textComment.value);
     }
-    alert(missing.join('\n'));
-    alert(result.join('\n'));
+
+   /* add the alert dialogs*/
+    if (missing.length > 0){
+        alert(missing.join('\n'));
+    }if(result.length >0) {
+        alert(result.join('\n'));
+    }
 }
 
 /*On click of the green button, change the text of the button to a different text and the color of the button to a different colour

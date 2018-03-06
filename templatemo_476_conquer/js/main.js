@@ -21,14 +21,14 @@ form.onsubmit=function () {
     var result = new Array();
     var missing = new Array();
     for (var i = 0; i < field.length; i++) {
-        if (field[i].value == "") {
+        if (field[i].value == "" || !/\S/.test(field[i].value)) {
             missing.push('Please fill in the empty' + ' ' + field[i].getAttribute("name") + ' ' + 'field');
         } else {
             result.push(field[i].getAttribute("name") + ":" + field[i].value);
         }
     }
     var textComment = document.querySelector('form textarea[name=message]');
-    if (textComment.value == "") {
+    if (textComment.value == "" || !/\S/.test(textComment.value)) {
         missing.push('Please fill empty' + ' ' + textComment.getAttribute("name") + ' ' + 'field');
     } else  {
         result.push(textComment.getAttribute("name") + ':' + textComment.value);
@@ -37,8 +37,10 @@ form.onsubmit=function () {
    /* add the alert dialogs*/
     if (missing.length > 0){
         alert(missing.join('\n'));
+        return false;
     }if(result.length >0) {
         alert(result.join('\n'));
+        return false;
     }
 }
 
